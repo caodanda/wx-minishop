@@ -1,0 +1,15 @@
+.searchBox{
+  height: 90rpx;
+  padding: 10rpx;
+  background-color: var(--themeColor);
+  color: gray;
+}
+.search{
+height: 100%;
+border-radius: 15rpx;
+background-color: #fff;
+/* 小程序中使用flex布局，justify-content为水平居中，align-items为垂直居中 */
+display: flex;
+justify-content: center;
+align-items: center;
+}

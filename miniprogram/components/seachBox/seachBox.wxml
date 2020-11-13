@@ -1,0 +1,13 @@
+<!--components/seachBox/seachBox.wxml-->
+<view class="searchBox">
+  <navigator class="search" url="../../pages/search/search" open-type="navigate">
+    搜索
+  </navigator>
+</view>
+
+<!-- 自定义组件使用步骤 -->
+<!-- 
+1.在components中创建组件；
+2.在使用组件的父组件的json文件中 usingComponents 中添加组件和地址
+3.在父组件的wxml中使用组件（以组件的名称作为标签使用）
+-->

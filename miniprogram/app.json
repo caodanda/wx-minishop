@@ -1,0 +1,46 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/category/category",
+    "pages/shop/shop",
+    "pages/mine/mine",
+    "pages/search/search"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#EE6363",
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "不要钱商城",
+    "backgroundColor": "#F2F2F2",
+    "backgroundTextStyle": "dark",
+    "enablePullDownRefresh": true
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "商城首页",
+        "iconPath": "./icon/index.png",
+        "selectedIconPath": "./icon/_index.png"
+      },
+      {
+        "pagePath": "pages/category/category",
+        "text": "商品分类",
+        "iconPath": "./icon/category.png",
+        "selectedIconPath": "./icon/_category.png"
+      },
+      {
+        "pagePath": "pages/shop/shop",
+        "text": "购物车",
+        "iconPath": "./icon/shop.png",
+        "selectedIconPath": "./icon/_shop.png"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "text": "个人中心",
+        "iconPath": "./icon/mine.png",
+        "selectedIconPath": "./icon/_mine.png"
+      }
+    ],
+    "selectedColor": "#EE6363"
+  }
+}

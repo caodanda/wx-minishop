@@ -1,0 +1,64 @@
+page{
+}
+.search-box{
+  width: 100%;
+  background-color: #EE6363;
+}
+.serach{
+  background-color: #FFFFFF;
+  height: 80rpx;
+  margin: 10rpx 0; 
+  border: 1px solid #FFFFFF;
+  text-align: center;
+  border-radius: 5px;
+  color: gray;
+}
+.swiper-img{
+  width: 100%;
+}
+.nav-img{
+  width: 100rpx;
+}
+/* 利用flex布局，项目属性flex：1的使各个项目同比例 */
+.cates-box{
+  display: flex;
+  padding: 20rpx 0;
+}
+.cates-nav{
+  flex: 1;
+  text-align: center;
+}
+.floor-title image{
+  width: 100%;
+}
+/* 可以使用float浮动让图片并排 */
+.floor-list{
+  clear: both;
+}
+.floor-list .list-nav{
+  float: left;
+  width: 33.3%;
+}
+/* 第一张图片原图的宽高度：232*386 */
+/* 第一张图片的比例= 232/386 = 33.3vm / height；
+对应的第一张图片的高度为： height = 33.3*386/232 */
+/* rpx适配需要再学习 */
+.floor-list .list-nav:nth-last-child(-n+4){
+ height:calc(33.3vw*386/232/2);
+ /* 如果第一张图片设置左边框，对应宽度会缩小，宽度缩小对应的高度会自适应减小 */
+ border-left: 10rpx solid #FFFFFF;
+}
+.floor-list .list-nav:nth-child(2){
+  border-bottom:10rpx solid #FFFFFF;
+}
+.floor-list .list-nav:nth-child(3){
+  border-bottom:10rpx solid #FFFFFF;
+  border-right: 10rpx solid #FFFFFF;
+}
+.floor-list .list-nav:nth-child(5){
+  border-right: 10rpx solid #FFFFFF;
+}
+.floor-list image{
+  width: 100%;
+  height: 100%;
+}
