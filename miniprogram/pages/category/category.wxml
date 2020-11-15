@@ -1,2 +1,36 @@
-<!--pages/category/category.wxml-->
-<text>pages/category/category.wxml</text>
+ <view>
+  <!--1.搜索框，自定义组件-->
+  <view class="search">
+    <seachBox></seachBox>
+  </view>
+  <!-- 2.导航条 -->
+  <view class="nav">
+    <view class="nav-box" >
+      <!-- 2.1左侧商品分类导航 -->
+      <view class="cate-box" >
+        <!-- 通过三元运算符添加动态class -->
+         <!-- 通过data-设置自定义数据可以传递到点击事件中进行调用-->
+        <view class="cate-item  {{num === index1 ? 'active' : ''}}" 
+          wx:for="{{cateList}}" 
+          wx:key="cate_name" 
+          wx:for-item="item1" 
+          wx:for-index="index1"
+          bindtap="getCateIndex"
+          data-num="{{index1}}"
+        >{{item1.cat_name}}</view>
+      </view>
+      <!-- 2.2右侧商品品牌信息 -->
+      <view class="content-box"> 
+        <!-- num为左侧菜单栏对应的索引，拿到点击索引，通过wx：if去判断数据显示 -->
+        <view class="content" wx:for="{{cateList[num].children}}" wx:key="cat_id" wx:for-item="item2" wx:for-index="index2">
+          <view class="content-title">{{item2.cat_name}}</view>
+          <navigator class="pro-box" wx:for="{{item2.children}}" wx:key="cat_id" wx:for-item="item3" wx:for-index="index3">
+            <image src="{{item3.cat_icon}}" mode="widthFix"></image>
+            <view class="text">{{item3.cat_name}}</view>
+          </navigator>
+        </view>
+      </view>
+    </view>
+  </view>
+ </view>
+ 

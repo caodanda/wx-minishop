@@ -1,4 +1,6 @@
 {
-  "usingComponents": {},
+  "usingComponents": {
+    "seachBox":"../../components/seachBox/seachBox"
+  },
   "navigationBarTitleText": "商品分类"
 }
