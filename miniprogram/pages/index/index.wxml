@@ -1,0 +1,39 @@
+<!--pages/index/index.wxml-->
+<view class="container">
+  <!-- 1.搜索框，多个页面使用，可以采用自定义组件引入 -->
+  <view>
+    <seachBox></seachBox>
+  </view>
+  <!-- 2.轮播图 -->
+  <view class="swiper-box">
+    <swiper indicator-dots autoplay circular interval="3000">
+      <!-- 占位符，包裹swiper-item -->
+      <block wx:for="{{swiperList}}" wx:key="goods_id">
+        <swiper-item> 
+          <navigator url="{{item.navigator_url}}">
+            <image class="swiper-img" src="{{item.image_src}}" mode="widthFix"></image>
+          </navigator>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+  <!-- 3.分类导航 -->
+  <view class="cates-box">
+    <block wx:for="{{catesList}}" wx:key="name">
+      <navigator class="cates-nav" url="{{item.navigator_url}}" open-type="{{item.open_type}}">
+        <image class="nav-img" src="{{item.image_src}}" mode="widthFix"></image>
+      </navigator>
+    </block>
+  </view>
+  <!-- 4.楼层展示-商品列表 -->
+  <view class="floor-box" wx:for="{{floorData}}" wx:key="index">
+    <view class="floor-title" >
+      <image src="{{item.floor_title.image_src}}" mode="widthFix"></image>
+    </view>
+    <view class="floor-list">
+      <navigator class="list-nav" wx:for="{{item.product_list}}" wx:for-item="itemList" wx:for-index="index2" wx:key="name">
+        <image src="{{itemList.image_src}}" mode="{{index2 === 0?'widthFix':'scaleToFill'}}"></image>
+      </navigator>
+    </view> 
+  </view>
+</view>

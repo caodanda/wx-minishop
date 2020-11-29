@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "seachBox":"../../components/seachBox/seachBox"
+  },
+  "navigationBarTitleText": "商城首页"
+}

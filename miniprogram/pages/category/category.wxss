@@ -1,0 +1,44 @@
+.nav-box{
+  display:flex ;
+}
+.cate-box{
+  background-color: #F9F7F6;
+  color: #B7B5B5;
+  text-align: center;
+  flex: 1;
+}
+.cate-item{
+  height: 80rpx;
+  line-height: 80rpx;
+  padding: 10rpx auto;
+}
+.cate-box .active{
+  font-size:32rpx;
+  color: #000;
+}
+.content-box{
+  flex:2;
+  padding: 10rpx;
+  font-size: 24rpx;
+}
+.content{
+  text-align: left;
+}
+.content-title{
+  margin: 10rpx 0;
+  font-weight: 500;
+  font-size: 28rpx;
+}
+.pro-box{
+  width: 160rpx;
+  padding: 20rpx;
+}
+.pro-box,.pro-box image{
+  display: inline-block;
+}
+.pro-box image{
+  width: 100rpx;
+}
+.pro-box .text{
+  text-align: center;
+}
