@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "seachBox":"../../components/seachBox/seachBox",
+    "proListTab":"../../components/proListTab/proListTab"
+  },
+  "navigationBarTitleText": "商品列表",
+  "enablePullDownRefresh": true,
+  "backgroundColor": "#F2F2F2",
+  "backgroundTextStyle": "dark"
+}

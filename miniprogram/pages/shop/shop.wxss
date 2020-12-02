@@ -1,1 +1,130 @@
-/* pages/shop/shop.wxss */
+.address{
+ width: 100%;
+ height: 120rpx;
+ padding: 20rpx;
+}
+.detail{
+  display: flex;
+}
+.address button{
+  width: 60%;
+  height: 80rpx;
+  line-height: 80rpx;
+}
+.address text{
+  display: inline-block;
+  flex:1
+}
+.address .telNumber{
+  text-align: right;
+} 
+.title{
+  font-size: 36rpx;
+  font-weight: 500;
+  height: 80rpx;
+  line-height: 80rpx;
+  border-top: 2rpx solid var(--themeColor); 
+  border-bottom: 2rpx solid var(--themeColor); 
+}
+.pro-item,.pro-detail,.pro-other,.pro-num{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.pro-item{
+  padding: 10rpx;
+  border-bottom: 1rpx solid #ecebeb;
+}
+.checkbox,.pro-img,.pro-price,.pro-num{
+  flex: 1;
+}
+.pro-detail{
+  flex:8;
+}
+.pro-title{
+  flex: 2;
+}
+.pro-img,.pro-title{
+  vertical-align: middle;
+}
+.pro-img image{
+  width: 200rpx;
+}
+.pro-name{
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  font-size: 28rpx;
+}
+.pro-other{
+  padding-top:20rpx;
+}
+.pro-price{
+  font-size: 32rpx;
+  color: var(--themeColor);
+}
+.pro-num .num,.pro-num button{
+  flex: 1;
+  padding: 0 16rpx;
+}
+.pro-num button{
+  height: 60rpx;
+}
+.bottomtab{
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100rpx;
+  /* line-height: 100rpx; */
+  border-top: 1rpx solid #ecebeb;
+}
+.allCheck{
+  flex: 4;
+  display: flex;
+  width: 100%;
+}
+.allCheck checkbox-group,.allCheck button{
+  flex: 1;
+}
+.allCheck text{
+  display: inline-block;
+  width: 50%;
+  height: 50rpx;
+  line-height: 50rpx;
+  text-align: center;
+  border: 1rpx solid #ecebeb;
+  border-radius: 30rpx;
+  background-color: #ecebeb;
+}
+.allPrice{
+  flex: 4;
+  text-align: right;
+  padding-right: 10rpx;
+}
+.allPrice .price{
+  color:var(--themeColor);
+  font-size: 32rpx;
+  font-weight: 500;
+}
+.settle{
+  flex: 3;
+  height: 100%;
+  padding-top: 30rpx;
+  text-align: center;
+  background-color: var(--themeColor);
+  color: #fff;
+  font-size: 32rpx;
+  font-weight: 500;
+}
+.empty{
+  height: calc(100vh - 200rpx);
+}
+.empty image{
+  height:100%;
+  width: 100%;
+}

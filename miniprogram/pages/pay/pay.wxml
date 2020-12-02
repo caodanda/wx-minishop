@@ -1,0 +1,14 @@
+<view class="pay">
+  <!-- 地址信息 -->
+  <view class="address">
+    <view class="detail detail1">
+      <text>{{address.userName}}</text>
+      <text class="telNumber">{{address.telNumber}}</text>
+    </view>
+    <view class="detail">{{address.provinceName}}{{address.cityName}}{{address.countyName}}{{address.detailInfo}}</view>
+  </view>
+  <!-- 商品信息 -->
+  <view class="pro-list"></view>
+  <!-- 底部tabbar -->
+  <view class="bottom-bar"></view>
+</view>

@@ -1,5 +1,6 @@
 .nav-box{
   display:flex ;
+  height:calc(100vh - 90rpx);
 }
 .cate-box{
   background-color: #F9F7F6;
@@ -25,6 +26,7 @@
   text-align: left;
 }
 .content-title{
+  text-align: center;
   margin: 10rpx 0;
   font-weight: 500;
   font-size: 28rpx;

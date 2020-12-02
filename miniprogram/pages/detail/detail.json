@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "proDetail":"../../components/proDetail/proDetail"
+  },
+  "navigationBarTitleText": "商品详情"
+}

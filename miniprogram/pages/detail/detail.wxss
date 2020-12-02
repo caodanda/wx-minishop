@@ -1,0 +1,91 @@
+.swiper-box{
+  height: 600rpx;
+}
+.theme-box{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10rpx 0;
+  border-bottom: solid 6rpx  gray;
+}
+.theme{
+  flex:5;
+  border-right: 2rpx solid gray;
+  padding-left: 6rpx;
+}
+.theme .price{
+  color: var(--themeColor);
+  font-weight: 500;
+  font-size: 32rpx;
+}
+.theme .text{
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient:vertical;
+  -webkit-line-clamp: 2;
+}
+.img-item image{
+  width: 100%;
+  padding-bottom: 10rpx;
+}
+.fav{
+  flex:1;
+  text-align: center;
+}
+.fav image{
+  width: 40rpx;
+  height: 40rpx;
+}
+.content{
+padding-top: 10rpx;
+padding-bottom: 100rpx ;
+}
+.content .title{
+  color: var(--themeColor);
+  font-size: 34rpx;
+  font-weight: 500;
+}
+.bottom-tap{
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #fff;
+  display: flex;
+  bottom: 0;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+.bottom-tap image{
+  width: 40rpx;
+}
+.service,.share,.shopCar{
+  flex:1;
+  font-size: 24rpx;
+}
+.addShopCar,.buy{
+  flex:1.5;
+  font-size: 24rpx;
+  color: #fff;
+  height: 100rpx;
+  line-height: 100rpx;
+}
+.service,.share{
+  position: relative;
+}
+.service button,.share button{
+ position: absolute;
+ left: 0;
+ top: 0;
+ opacity: 0;
+ width: 100%;
+ height: 100%;
+}
+.addShopCar{
+  background-color: #db9332;
+}
+.buy{
+  background-color: var(--themeColor);
+}
+

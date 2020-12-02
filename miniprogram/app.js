@@ -1,7 +1,9 @@
-//app.js
+//补充知识点-待学习：
+// 1.滑动跳转到下一个模块
+// 2.promise封装网络请求，针对请求地址，提取公共的地址代码 
+// 3.本地缓存查询，优化性能
 App({
   onLaunch: function () {
-
     if (!wx.cloud) {
       console.error('请使用 2.2.3 或以上的基础库以使用云能力')
     } else {
@@ -14,7 +16,6 @@ App({
         traceUser: true,
       })
     }
-
     this.globalData = {}
   }
 })

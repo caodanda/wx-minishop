@@ -1,2 +1,75 @@
-<!--pages/shop/shop.wxml-->
-<text>pages/shop/shop.wxml</text>
+<view class="shop-box">
+  <view class="address" wx:if="{{!address.userName}}">
+    <button type="primary" plain bindtap="handleAddress">获取收货地址</button>
+  </view>
+  <view class="address address1" wx:else>
+    <view class="detail">
+      <text>收货人：{{address.userName}}</text>
+      <text class="telNumber">{{address.telNumber}}</text>
+    </view>
+    <view>{{address.provinceName}}{{address.cityName}}{{address.countyName}}{{address.detailInfo}}</view>
+  </view>
+  <view class="shop-content">
+    <view class="title">购物车</view>
+    <view class="pro-list">
+      <view class="pro-item" 
+        wx:for="{{cartData}}" 
+        wx:key="goods_id" 
+        wx:if="{{cartData.length}}"
+      >
+        <!-- 选择框 -->
+        <view class="checkbox">
+          <checkbox-group bindchange="changeCheck" data-index="{{index}}">
+            <checkbox checked="{{item.check}}"> </checkbox>
+          </checkbox-group>
+        </view>
+        <!-- 商品详情 -->
+        <view class="pro-detail">
+            <navigator url="../detail/detail?goodid={{item.goods_id}}" class="pro-img">
+              <image mode="widthFix" src="{{item.goods_img[0]}}"/>
+            </navigator>
+          <!-- 商品名称/价格/数量 -->
+            <view class="pro-title">
+              <navigator url="../detail/detail?goodid={{item.goods_id}}" class="pro-name">{{item.goods_name}}</navigator>
+              <view class="pro-other">
+                <view class="pro-price"> ¥ {{item.goods_price}}</view>
+                <view class="pro-num">
+                  <button size="mini" class="sub" bindtap='sub' 
+                    data-index="{{index}}">-</button>
+                  <input class="num" 
+                    value="{{item.Nums}}" 
+                    type="number"                 
+                    bindinput="handleNum"
+                    data-index="{{index}}"
+                  />
+                  <button size="mini" class="add" 
+                    bindtap='add'
+                    data-index="{{index}}">+</button>
+                </view>
+              </view>
+            </view>
+        </view>
+      </view>
+      <view class="empty" 
+        wx:if="{{!cartData.length}}">
+        <image src="../../icon/block.jpeg"></image>
+      </view>
+    </view>
+  </view>
+   <!-- 底部tab栏 -->
+  <view class="bottomtab">
+    <view class="allCheck">
+      <checkbox-group bindchange="allCheckChange">
+        <checkbox checked="{{allChecked}}">全选</checkbox>
+      </checkbox-group>
+      <text class="del" bindtap="delPro">删除</text>
+    </view>
+    <view class="allPrice">
+      <view class="price">合计：¥ {{allPrices}}</view>
+      <view class="text">包含运费</view>
+    </view>
+    <view class="settle" bindtap="handleSettle">结算
+      <text class="num">({{allProNums}})</text>
+    </view>
+  </view>
+</view>
