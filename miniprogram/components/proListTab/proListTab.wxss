@@ -1,0 +1,13 @@
+.nav{
+  display: flex;
+  text-align: center;
+  height: 90rpx;
+  line-height: 90rpx;
+}
+.nav-item{
+  flex:1;
+  border-bottom: 4rpx solid #e1e1e1;
+}
+.nav .active{
+  border-bottom: 4rpx solid var(--themeColor);
+}

@@ -1,18 +1,18 @@
 {
   "pages": [
-    "pages/category/category",
     "pages/index/index",
+    "pages/category/category",
     "pages/shop/shop",
     "pages/mine/mine",
-    "pages/search/search"
+    "pages/search/search",
+    "pages/goods/goods",
+    "pages/detail/detail",
+    "pages/pay/pay"
   ],
   "window": {
     "navigationBarBackgroundColor": "#EE6363",
     "navigationBarTextStyle": "white",
-    "navigationBarTitleText": "不要钱商城",
-    "backgroundColor": "#F2F2F2",
-    "backgroundTextStyle": "dark",
-    "enablePullDownRefresh": true
+    "navigationBarTitleText": "不要钱商城"
   },
   "tabBar": {
     "list": [

@@ -1,0 +1,70 @@
+<!-- 
+（1）搜索框多个页面使用，可以自定义组件，调用到各个页面使用。
+   . 自定义组件的操作步骤：在components中创建文件夹，并在文件夹内创建新的component文件
+   . 在使用页面的json文件中usingComponents引入自定义组件（key：组件名；value：组件地址）；并在使用页面html中添加自定义组件标签。
+   .  自定义组件中可以使用slot插槽功能，在父组件的子组件标签内可以添加代码
+（2）轮播图和iamge的宽高度存在冲突，需要进行调整。
+（3）图片rpx适配，需要结合图片原图的宽高度进行设置
+（4）两栏/三栏布局可以采用flex布局，利用项目属性为flex划分不同的宽度比例；也可以采用float形式，会比较麻烦；
+（5）动态calss或style样式，可以采用三元运算符，格式需要添加花括号{{num === index1 ? 'active' : ''}}；
+（6）正常组件的点击事件为bindtap，通过自定义data属性，可以将data的数据传入点击事件中作调用处理。
+（7）navigator 标签为块级标签，通过dispaly：inline-block 转化为行内块元素，实现多个导航并排
+（8） 经常使用calc（）计算剩下的宽高度，例如height：calc（100vh - 90rpx） 注意运算符前后必须有空格
+（9）使用scroll-view形成可滚动的试图区域，使用 竖向滚动时 需要给对应的标签设置高度才能生效;
+    不用页面切换时，让页面内容置顶，使用scroll-top属性，属性值为变量，每次点击侧边标题栏时，让对应变量变为0即可实现每次点击每次页面置顶的效果。
+（10）单行文本隐藏省略（3个属性）：overflow: hidden; text-overflow: ellipsis; white-space: nowrap； 多行文本隐藏省略 （4个属性）：overflow: hidden; display:-webkit-box -webkit-box-orient:vertical;  -webkit-line-clamp:2; 
+
+（1）导航栏动态页面参数设定，URL在页面路径后通过？连接参数，多个参数之间用&连接。
+    URL：“../goods/goods ? id='{{}}'& name='{{}}'"
+    动态传递进去的参数可以在 onLoad生命周期options参数中拿到。
+（2）父子之间通信方式
+   父传子：在父组件的子组件html标签上定义对应属性，并在子组件js文件中的properties中进行接收；
+          properties: {
+            navList:{
+              type:Array,  定义接收数据的类型
+              value:[]，定义接收数据的默认值
+          }}
+  子传父： 子组件的信息通过this.triggerEvent('事件名'，传递的参数和值)；父组件在html子组件的标签上定义bind事件，用于进行业务逻辑处理。
+
+（3）网络请求接口参数
+    在js文件中定义网络请求的参数，网络请求时按照参数进行处理。定义的参数可以用于请求成功后的逻辑处理。
+    Params：{
+        value：‘’，
+        pageSize：1
+    }
+    网络请求可以封装为一个函数，进行多次调用
+
+（4）用于上拉触底事件，加载下一页
+    上拉触底事件：onReachBottom函数，
+    . 先确认当前页是否是最后一页，如果不是，则将当前页码++，且重新进行网格请求，且商品列表需要对原始的数据和新请求的数据进行数组拼接，确保商品列表数组中包含展示过的所有数据。
+    proList:[...this.data.proList , ...res.data.message.goods]
+    . 如果是最后一页，则添加消息提示用户；消息提示：wx.showToast方法
+    wx.showToast({title:'已经到底了'}); 
+
+（5）下拉刷新显示加载中，刷新完毕数据重新请求
+    .先设置下拉刷新操作项
+        "enablePullDownRefresh": true; 设置下拉刷新显示
+         onPullDownRefresh 用户下拉事件；
+        在请求完成后（不管成功与否）关闭下拉刷新窗口（ wx.stopPullDownRefresh），否则出现数据已经更新但还在刷新
+    .用户下拉后将商品列表数据为空，且页码为第一页，重新请求数据；
+
+    .数据请求中显示文字《加载中》
+        在封装的网络请求函数中，在wx.request代码前添加wx.showLoading方法，添加提示的文字；
+        在数据请求完成后（不管成功与否）complete回调中添加 wx.hideLoading方法，在请求完成后隐藏提示框。
+
+（6）联系客服— — 选项； 转发分享 — — 选项
+    需要设置为button标签，并将其中open-type类型进行明确著名
+    . 联系客服 — — <button open-type="contact"></button>
+    . 转发分享 — — <button open-type="share"></button>
+
+（7）加入购物车操作（添加点击事件，添加点击事件的处理逻辑）
+    . 先获取本地缓存wx.getStorageSync 参数：key（购物车cartData，最好是数组格式）
+    . 判断点击的商品id 是否存在于本地缓存的数据里（可以通过findIndex（）获取到对应的索引）
+    . 如果没在，将点击的商品信息（理论data中有数据）push到本地缓存的购物车数据中，并且给商品信息对象中添加一个数量为1的属性，直接Object.num = 1;
+    . 如果判断点击的商品id已经存在，直接将cartData[index].num++； index就等于上面findIndex查到的索引
+    .正常流程还要判断后台系统库存数量
+    . 判断完成后，将对应的购物车数组存储到本地缓存中wx.setStorageSync（{key：上述一致，data：需要存储的数据}）
+    .在加入购物车后提示用户《已添加》的字样，wx.showToast
+ -->
+
+ 

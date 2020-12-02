@@ -1,0 +1,4 @@
+/* components/proDetail/proDetail.wxss */
+.pro-detail image{
+width: 100%;
+}

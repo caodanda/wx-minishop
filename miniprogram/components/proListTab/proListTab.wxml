@@ -1,0 +1,17 @@
+<view class="nav-box">
+    <view class="nav">
+      <!-- 导航栏 -->
+      <view class="nav-item {{num == index ? 'active' : ''}}" 
+        wx:for="{{navList}}"
+        wx:for-index="index"
+        wx:key="index"
+        data-num="{{index}}"
+        bindtap="handleTap"
+      >{{item.value}}</view>
+    </view>
+    <!-- 内容 -->
+    <view class="nav-content">
+      <!-- 插槽使用，父组件中子组件标签内的代码会放置到插槽中 -->
+      <slot></slot>
+    </view>
+  </view>

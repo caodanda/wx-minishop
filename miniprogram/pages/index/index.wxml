@@ -10,7 +10,7 @@
       <!-- 占位符，包裹swiper-item -->
       <block wx:for="{{swiperList}}" wx:key="goods_id">
         <swiper-item> 
-          <navigator url="{{item.navigator_url}}">
+          <navigator url="../category/category" open-type="switchTab">
             <image class="swiper-img" src="{{item.image_src}}" mode="widthFix"></image>
           </navigator>
         </swiper-item>
@@ -20,7 +20,7 @@
   <!-- 3.分类导航 -->
   <view class="cates-box">
     <block wx:for="{{catesList}}" wx:key="name">
-      <navigator class="cates-nav" url="{{item.navigator_url}}" open-type="{{item.open_type}}">
+      <navigator class="cates-nav" url="../category/category" open-type="switchTab">
         <image class="nav-img" src="{{item.image_src}}" mode="widthFix"></image>
       </navigator>
     </block>
@@ -31,7 +31,8 @@
       <image src="{{item.floor_title.image_src}}" mode="widthFix"></image>
     </view>
     <view class="floor-list">
-      <navigator class="list-nav" wx:for="{{item.product_list}}" wx:for-item="itemList" wx:for-index="index2" wx:key="name">
+      <navigator class="list-nav" wx:for="{{item.product_list}}" wx:for-item="itemList" wx:for-index="index2" wx:key="name" 
+      url="../category/category" open-type="switchTab">
         <image src="{{itemList.image_src}}" mode="{{index2 === 0?'widthFix':'scaleToFill'}}"></image>
       </navigator>
     </view> 

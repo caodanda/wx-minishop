@@ -1,0 +1,3 @@
+<view class="pro-detail" wx:for="{{mainData.detail_img}}" wx:key="*this">
+  <image mode="widthFix" src="{{item}}" />
+</view>

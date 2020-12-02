@@ -1,0 +1,29 @@
+<view class="goods">
+  <!-- 1.搜索框组件 -->
+  <view class="search">
+    <seachBox></seachBox>
+  </view>
+  <!-- 2.导航栏+商品列表显示 -->
+  <proListTab navList="{{navList}}" bindgetClickIndex="handleItemChange">
+    <!-- 2.1 页面1 展示 -->
+    <block wx:if="{{index == 0}}">
+      <navigator class="pro-list" wx:for="{{proList}}" wx:key="goods_id" 
+        url="../detail/detail?goodid={{item.goods_id}}">
+        <view class="pro-image">
+          <!-- 通过三元运算符给没有src的图片添加默认地址 -->
+          <image src="{{item.goods_small_logo ? item.goods_small_logo : '../../icon/111.jpg'}}" mode="widthFix">
+          </image>
+        </view>
+        <view class="pro-content">
+          <view class="text">{{item.goods_name}}</view>
+          <view class="price">¥:{{item.goods_price}}</view>
+        </view>
+      </navigator>
+    </block>
+    <!-- 2.2 页面2展示 -->
+    <block wx:if="{{index == 1}}">1</block>
+    <!-- 2.3 页面3展示 -->
+    <block wx:if="{{index == 2}}">2</block>
+  </proListTab>
+</view>
+

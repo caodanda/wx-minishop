@@ -7,7 +7,7 @@
   <view class="nav">
     <view class="nav-box" >
       <!-- 2.1左侧商品分类导航 -->
-      <view class="cate-box" >
+      <scroll-view class="cate-box" scroll-y="true">
         <!-- 通过三元运算符添加动态class -->
          <!-- 通过data-设置自定义数据可以传递到点击事件中进行调用-->
         <view class="cate-item  {{num === index1 ? 'active' : ''}}" 
@@ -18,18 +18,25 @@
           bindtap="getCateIndex"
           data-num="{{index1}}"
         >{{item1.cat_name}}</view>
-      </view>
+      </scroll-view>
       <!-- 2.2右侧商品品牌信息 -->
-      <view class="content-box"> 
+      <scroll-view class="content-box" scroll-y="true" scroll-top="{{scrollNum}}"> 
         <!-- num为左侧菜单栏对应的索引，拿到点击索引，通过wx：if去判断数据显示 -->
         <view class="content" wx:for="{{cateList[num].children}}" wx:key="cat_id" wx:for-item="item2" wx:for-index="index2">
-          <view class="content-title">{{item2.cat_name}}</view>
-          <navigator class="pro-box" wx:for="{{item2.children}}" wx:key="cat_id" wx:for-item="item3" wx:for-index="index3">
+          <view class="content-title">/ {{item2.cat_name}} /</view>
+          <navigator class="pro-box" 
+           wx:for="{{item2.children}}" 
+           wx:key="cat_id" 
+           wx:for-item="item3" 
+           wx:for-index="index3"
+           url="../goods/goods?id={{item3.cat_id}}"
+          >
+          <!-- 通过在url设置动态参数，来点击跳转到对应的商品页面 -->
             <image src="{{item3.cat_icon}}" mode="widthFix"></image>
             <view class="text">{{item3.cat_name}}</view>
           </navigator>
         </view>
-      </view>
+      </scroll-view>
     </view>
   </view>
  </view>

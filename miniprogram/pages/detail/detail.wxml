@@ -1,0 +1,53 @@
+<view class="goods-detail">
+  <!-- 1.商品详情 -->
+  <view class="swiper">
+    <!-- 1.1 轮播图 -->
+    <swiper class="swiper-box" indicator-dots autoplay circular>
+      <swiper-item 
+        class="img-item" 
+        wx:for="{{mainData.goods_img}}" 
+        wx:key="*this"
+        bindtap="handletap"
+        data-index='{{index}}'>
+          <image src="{{item}}" mode="widthFix"></image>
+      </swiper-item>
+    </swiper>
+    <!-- 1.2 商品名称/价格/收藏图标 -->
+    <view class="theme-box">
+      <view class="theme">
+        <view class="price">¥<text>{{mainData.goods_price}}</text></view>
+        <view class="text">{{mainData.goods_name}}</view>
+      </view>
+      <view class="fav">
+        <image src="../../icon/fav.png"></image>
+        <view>收藏</view>
+      </view>
+    </view>
+  </view>
+  <!-- 2.图文详情 -->
+  <view class="content">
+    <view class="title">图文详情</view>
+    <proDetail mainData="{{mainData}}"></proDetail>
+  </view>
+  <!-- 3.底部功能栏 -->
+  <view class="bottom-tap">
+    <view class="service">
+      <image src="../../icon/service.png" mode="widthFix"></image>
+      <view>联系客服</view>
+      <!-- 通过button按钮open-type=“contact”实现客服消息框；open-type=“share”实现转发分享，button的样式可以进行隐藏。连接客服消息需要再学习 -->
+      <button open-type="contact"></button>
+    </view>
+    <view class="share">
+      <image src="../../icon/share.png" mode="widthFix"></image>
+      <view>分享</view>
+      <button open-type="share"></button>
+    </view>
+    <!-- 导航跳转到tabBar页面，需要修改open-type -->
+    <navigator class="shopCar" url="../shop/shop" open-type="switchTab">
+     <image src="../../icon/shop.png" mode="widthFix"></image>
+     <view>购物车</view>
+    </navigator>
+    <view class="addShopCar" bindtap="addShopCar">加入购物车</view>
+    <view class="buy" bindtap="buying">立即购买</view>
+  </view>
+</view>

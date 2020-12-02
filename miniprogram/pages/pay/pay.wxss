@@ -1,0 +1,14 @@
+.address{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.detail{
+  flex: 1;
+}
+.detail1 text{
+  display: inline-block
+}
+.telNumber{
+  text-align: right;
+}
